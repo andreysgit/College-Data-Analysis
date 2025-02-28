@@ -1,0 +1,25 @@
+# LaTeX Auxiliary Files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+
+# Compiled PDF copies (optional)
+*.pdf
+
+# Backup or temporary files
+*~
+*.bak
+*.swp
+*.swo
+*.tmp
+
+# MacOS system files (optional)
+.DS_Store
