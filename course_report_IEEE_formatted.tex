@@ -1,351 +1,16 @@
-              
-                %% bare_jrnl.tex
-%% V1.4b
-%% 2015/08/26
-%% by Michael Shell
-%% see http://www.michaelshell.org/
-%% for current contact information.
-%%
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
-%% journal paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/pkg/ieeetran
-%% and
-%% http://www.ieee.org/
 
-%%*************************************************************************
-%% Legal Notice:
-%% This code is offered as-is without any warranty either expressed or
-%% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE! 
-%% User assumes all risk.
-%% In no event shall the IEEE or any contributor to this code be liable for
-%% any damages or losses, including, but not limited to, incidental,
-%% consequential, or any other damages, resulting from the use or misuse
-%% of any information contained here.
-%%
-%% All comments are the opinions of their respective authors and are not
-%% necessarily endorsed by the IEEE.
-%%
-%% This work is distributed under the LaTeX Project Public License (LPPL)
-%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
-%% distributed and modified. A copy of the LPPL, version 1.3, is included
-%% in the base LaTeX documentation of all distributions of LaTeX released
-%% 2003/12/01 or later.
-%% Retain all contribution notices and credits.
-%% ** Modified files should be clearly indicated as such, including  **
-%% ** renaming them and changing author support contact information. **
-%%*************************************************************************
-
-
-% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
-% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
-% *** with production work. The IEEE's font choices and paper sizes can   ***
-% *** trigger bugs that do not appear when using other class files.       ***                          ***
-% The testflow support page is at:
-% http://www.michaelshell.org/tex/testflow/
-
-
-% Please refer to your journal's instructions for other
-% options that should be set.
 \documentclass[journal,onecolumn]{IEEEtran}
-%
-% If IEEEtran.cls has not been installed into the LaTeX system files,
-% manually specify the path to it like:
-% \documentclass[journal]{../sty/IEEEtran}
 
 
-
-
-
-% Some very useful LaTeX packages include:
-% (uncomment the ones you want to load)
-
-
-% *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/pkg/ifpdf
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
-
-
-
-
-
-
-% *** CITATION PACKAGES ***
-%
-%\usepackage{cite}
-% cite.sty was written by Donald Arseneau
-% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
-% \cite{} output to follow that of the IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off
-% such as if a citation ever needs to be enclosed in parenthesis.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 5.0 (2009-03-20) and later if using hyperref.sty.
-% The latest version can be obtained at:
-% http://www.ctan.org/pkg/cite
-% The documentation is contained in the cite.sty file itself.
-
-
-
-
-
-
+\usepackage{parskip}
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
   \usepackage[pdftex]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
 \else
-  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
-  % \usepackage[dvips]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../eps/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
+
 \fi
-% graphicx was written by David Carlisle and Sebastian Rahtz. It is
-% required if you want graphics, photos, etc. graphicx.sty is already
-% installed on most LaTeX systems. The latest version and documentation
-% can be obtained at: 
-% http://www.ctan.org/pkg/graphicx
-% Another good source of documentation is "Using Imported Graphics in
-% LaTeX2e" by Keith Reckdahl which can be found at:
-% http://www.ctan.org/pkg/epslatex
-%
-% latex, and pdflatex in dvi mode, support graphics in encapsulated
-% postscript (.eps) format. pdflatex in pdf mode supports graphics
-% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
-% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
-% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
-% which can result in "jaggedy"/blurry rendering of lines and letters as
-% well as large increases in file sizes.
-%
-% You can find documentation about the pdfTeX application at:
-% http://www.tug.org/applications/pdftex
-
-
-
-
-
-% *** MATH PACKAGES ***
-%
-%\usepackage{amsmath}
-% A popular package from the American Mathematical Society that provides
-% many useful and powerful commands for dealing with mathematics.
-%
-% Note that the amsmath package sets \interdisplaylinepenalty to 10000
-% thus preventing page breaks from occurring within multiline equations. Use:
-%\interdisplaylinepenalty=2500
-% after loading amsmath to restore such page breaks as IEEEtran.cls normally
-% does. amsmath.sty is already installed on most LaTeX systems. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/pkg/amsmath
-
-
-
-
-
-% *** SPECIALIZED LIST PACKAGES ***
-%
-%\usepackage{algorithmic}
-% algorithmic.sty was written by Peter Williams and Rogerio Brito.
-% This package provides an algorithmic environment fo describing algorithms.
-% You can use the algorithmic environment in-text or within a figure
-% environment to provide for a floating algorithm. Do NOT use the algorithm
-% floating environment provided by algorithm.sty (by the same authors) or
-% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
-% algorithm float types and packages that provide these will not provide
-% correct IEEE style captions. The latest version and documentation of
-% algorithmic.sty can be obtained at:
-% http://www.ctan.org/pkg/algorithms
-% Also of interest may be the (relatively newer and more customizable)
-% algorithmicx.sty package by Szasz Janos:
-% http://www.ctan.org/pkg/algorithmicx
-
-
-
-
-% *** ALIGNMENT PACKAGES ***
-%
-%\usepackage{array}
-% Frank Mittelbach's and David Carlisle's array.sty patches and improves
-% the standard LaTeX2e array and tabular environments to provide better
-% appearance and additional user controls. As the default LaTeX2e table
-% generation code is lacking to the point of almost being broken with
-% respect to the quality of the end results, all users are strongly
-% advised to use an enhanced (at the very least that provided by array.sty)
-% set of table tools. array.sty is already installed on most systems. The
-% latest version and documentation can be obtained at:
-% http://www.ctan.org/pkg/array
-
-
-% IEEEtran contains the IEEEeqnarray family of commands that can be used to
-% generate multiline equations as well as matrices, tables, etc., of high
-% quality.
-
-
-
-
-% *** SUBFIGURE PACKAGES ***
-%\ifCLASSOPTIONcompsoc
-%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
-%\else
-%  \usepackage[caption=false,font=footnotesize]{subfig}
-%\fi
-% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
-% for subfigure.sty, the latter of which is no longer maintained and is
-% incompatible with some LaTeX packages including fixltx2e. However,
-% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
-% which will override IEEEtran.cls' handling of captions and this will result
-% in non-IEEE style figure/table captions. To prevent this problem, be sure
-% and invoke subfig.sty's "caption=false" package option (available since
-% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
-% handling of captions.
-% Note that the Computer Society format requires a larger sans serif font
-% than the serif footnote size font used in traditional IEEE formatting
-% and thus the need to invoke different subfig.sty package options depending
-% on whether compsoc mode has been enabled.
-%
-% The latest version and documentation of subfig.sty can be obtained at:
-% http://www.ctan.org/pkg/subfig
-
-
-
-
-% *** FLOAT PACKAGES ***
-%
-%\usepackage{fixltx2e}
-% fixltx2e, the successor to the earlier fix2col.sty, was written by
-% Frank Mittelbach and David Carlisle. This package corrects a few problems
-% in the LaTeX2e kernel, the most notable of which is that in current
-% LaTeX2e releases, the ordering of single and double column floats is not
-% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
-% single column figure to be placed prior to an earlier double column
-% figure.
-% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
-% corrections already built into the system in which case a warning will
-% be issued if an attempt is made to load fixltx2e.sty as it is no longer
-% needed.
-% The latest version and documentation can be found at:
-% http://www.ctan.org/pkg/fixltx2e
-
-
-%\usepackage{stfloats}
-% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
-% the ability to do double column floats at the bottom of the page as well
-% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
-% LaTeX2e). It also provides a command:
-%\fnbelowfloat
-% to enable the placement of footnotes below bottom floats (the standard
-% LaTeX2e kernel puts them above bottom floats). This is an invasive package
-% which rewrites many portions of the LaTeX2e float routines. It may not work
-% with other packages that modify the LaTeX2e float routines. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/pkg/stfloats
-% Do not use the stfloats baselinefloat ability as the IEEE does not allow
-% \baselineskip to stretch. Authors submitting work to the IEEE should note
-% that the IEEE rarely uses double column equations and that authors should try
-% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
-% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
-% such ways.
-% Do not attempt to use stfloats with fixltx2e as they are incompatible.
-% Instead, use Morten Hogholm'a dblfloatfix which combines the features
-% of both fixltx2e and stfloats:
-%
-% \usepackage{dblfloatfix}
-% The latest version can be found at:
-% http://www.ctan.org/pkg/dblfloatfix
-
-
-
-
-%\ifCLASSOPTIONcaptionsoff
-%  \usepackage[nomarkers]{endfloat}
-% \let\MYoriglatexcaption\caption
-% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
-%\fi
-% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
-% Axel Sommerfeldt. This package may be useful when used in conjunction with 
-% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
-% submissions have lists of figures/tables at the end of the paper and that
-% figures/tables without any captions are placed on a page by themselves at
-% the end of the document. If needed, the draftcls IEEEtran class option or
-% \CLASSINPUTbaselinestretch interface can be used to increase the line
-% spacing as well. Be sure and use the nomarkers option of endfloat to
-% prevent endfloat from "marking" where the figures would have been placed
-% in the text. The two hack lines of code above are a slight modification of
-% that suggested by in the endfloat docs (section 8.4.1) to ensure that
-% the full captions always appear in the list of figures/tables - even if
-% the user used the short optional argument of \caption[]{}.
-% IEEE papers do not typically make use of \caption[]'s optional argument,
-% so this should not be an issue. A similar trick can be used to disable
-% captions of packages such as subfig.sty that lack options to turn off
-% the subcaptions:
-% For subfig.sty:
-% \let\MYorigsubfloat\subfloat
-% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
-% However, the above trick will not work if both optional arguments of
-% the \subfloat command are used. Furthermore, there needs to be a
-% description of each subfigure *somewhere* and endfloat does not add
-% subfigure captions to its list of figures. Thus, the best approach is to
-% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
-% and instead reference/explain all the subfigures within the main caption.
-% The latest version of endfloat.sty and its documentation can obtained at:
-% http://www.ctan.org/pkg/endfloat
-%
-% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
-% later in the document, say, to conditionally put the References on a 
-% page by themselves.
-
-
-
-
-% *** PDF, URL AND HYPERLINK PACKAGES ***
-%
-%\usepackage{url}
-% url.sty was written by Donald Arseneau. It provides better support for
-% handling and breaking URLs. url.sty is already installed on most LaTeX
-% systems. The latest version and documentation can be obtained at:
-% http://www.ctan.org/pkg/url
-% Basically, \url{my_url_here}.
-
-
-
-
-% *** Do not adjust lengths that control margins, column widths, etc. ***
-% *** Do not use packages that alter fonts (such as pslatex).         ***
-% There should be no need to do such things with IEEEtran.cls V1.6 and later.
-% (Unless specifically asked to do so by the journal or conference you plan
-% to submit to, of course. )
-
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -385,7 +50,7 @@
     integrating additional socioeconomic data, and developing interactive visual tools to enhance usability for stakeholders.
     \end{abstract}
 
-\section{Introduction}
+\section{Goals and Business Objectives}
 XYZ Data Company is conducting an income-based analysis for UVW College to develop
 a targeted marketing profile. The objective is to explore the influence of various
 socioeconomic factors on an individual’s income level, specifically determining
@@ -399,8 +64,33 @@ By identifying trends and relationships between demographic characteristics and 
 we aim to help UVW College optimize its outreach efforts and target prospective
 students more effectively.
 
+\section{Assumptions}
 
+\subsection{Technical Assumptions}
+\begin{itemize}
+    \item The dataset used for this analysis is representative of the overall population and contains minimal sampling bias.
+    \item All missing values marked as `?` represent true missing data rather than meaningful categorical values.
+    \item Python and its data science libraries (\texttt{pandas}, \texttt{seaborn}, \texttt{matplotlib}, \texttt{scikit-learn}) provide sufficient tooling to conduct this analysis.
+    \item Data normalization or transformation will not be required unless strong skewness or inconsistencies are identified.
+    \item The sample size is large enough to make meaningful observations about the data
+    \item The categorical variables in the dataset can be meaningfully encoded without losing significant information.
+    \item Outliers, if present, do not drastically impact results unless they are extreme and must be handled.
+    \item The dataset structure (column names, data types) remains consistent throughout the analysis, ensuring no unexpected format changes.
+\end{itemize}
 
+\subsection{Business Assumptions}
+\begin{itemize}
+    \item Higher education levels are expected to correlate with higher income. Individuals with bachelor’s degrees or higher should have a greater likelihood of earning above \$50K.
+    \item Binned age groups roughly correspond to life stages, for example 65+ for retirees
+    \item We will sometimes use the relative term 'low' for a salary under 50K and 'high' for over 50K for ease of reading
+    \item Marital status is assumed to be a strong predictor of income. Married individuals are expected to have a higher probability of being in the high-income group.
+    \item Work class and occupation play a major role in income distribution. Higher-paying jobs (e.g., managerial roles, STEM careers) should show stronger income growth.
+    \item Gender-based income disparities are likely to be present, with male individuals expected to have a higher proportion in the high-income bracket.
+    \item Certain ethnic or national backgrounds might correlate with different income levels, potentially due to occupational clustering.
+    \item Hours worked per week is expected to have a non-linear relationship with income, meaning that beyond a certain threshold, additional hours may not significantly increase earnings.
+    \item Capital gains and losses are significant indicators of high-income individuals, particularly in investment-heavy occupations.
+    \item The insights from this study can be generalized for UVW College’s marketing strategy, assuming that targeting specific demographic groups based on income factors will improve outreach effectiveness.
+\end{itemize}
 \section{Data Acquisition and Preprocessing}
 
 
@@ -447,20 +137,13 @@ To validate early assumptions, the first visualization was created:
 \end{itemize}
 
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.9\linewidth]{hist_bad.png}  % Reduce width slightly
-    \caption{Income vs Education without aggregates and ranked order}
-    \label{fig:income_vs_education_no_agg}
-\end{figure}
-
-\begin{figure}[t]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{hist_4.png}  % Reduce width slightly
     \caption{Final histogram for Income vs Education}
     \label{fig:final_income_vs_education}
 \end{figure}
-\section{Initial / Key Insights from Education Level vs. Income Distribution}
+\section{Key Insights from Education Level vs. Income Distribution}
 
 \begin{itemize}
     \item \textbf{Higher Education Correlates with Higher Income:} Individuals with advanced degrees (Masters, Professional School, Doctorate) have a significantly higher proportion of incomes above \$50K compared to those with lower educational attainment.
@@ -472,32 +155,131 @@ To validate early assumptions, the first visualization was created:
 
 
 \section{User Stories}
-To structure our approach further, we defined the following additional user stories that represent key stakeholders:
-
+To structure our approach further, we defined user stories that represent key stakeholders.
+\bigskip
 \subsection{User Story \#1}
-\begin{itemize}
-    \item \textbf{Role:} Director of the UVW marketing team
-    \item \textbf{Goal:} To analyze how the combination of sex, marital-status, and age influences salary category.
-    \item \textbf{Context/Insights:}
-    \begin{itemize}
-        \item Our findings suggest that marital status has one of the strongest correlations with income, particularly for married individuals.
-        \item Age plays a crucial role in career progression, with mid-career individuals (40-50 years old) more likely to reach higher income brackets.
-        \item There is a significant gender income gap, and this analysis will determine whether marital status and age mitigate or amplify this effect.
-        \item Understanding these relationships will help UVW College craft targeted messaging for different demographics and optimize outreach strategies.
-    \end{itemize}
+\bigskip
 
-\end{itemize}
+\section{User Stories}
+To structure our approach further, we defined user stories that represent key stakeholders.
 
-\subsection{User Story \#1}
-\begin{itemize}
-    \item \textbf{Role:} Director of the UVW marketing team
-    \item \textbf{Goal:} To analyze how the combination of occupation type, hours worked per week, and capital gains influences salary category.
-\end{itemize}
+\textbf{User Story 1:} The director of the UVW marketing team wants us to analyze how the
+combination of sex, marital-status, and age influences salary category.
+
+\textbf{Variable Analysis:} To combine the information for these groups, we broke apart ages into
+categorical groups(bins), with a roughly gaussian distribution. The groups included:
+17-20, 21-25, 26-32, 33-42, 43-54, 54-64, and 65+.
+
+To compare age, marital status, and salary in one chart we chose to do a heatmap with a diverging color scheme of
+'coolwarm' to represent low versus high percentages earning salaries greater than 50K. Two facets were created, one representing male and the other female. 
+Missing values were replaced with zeroes for this chart because in this case, we can take it to mean there was a lack
+of participants who filled these categories. This helps clarify the visual representation of this data.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.05\linewidth]{mf_marital_agebins.png}  % Reduce width slightly
+    \caption{Male and Female Salary by Marital Status vs Age}
+    \label{fig:mf_marital_agebins}
+\end{figure}
+
+
+\textbf{Visual Analysis:} 
+\medskip
+    
+\underline{\textbf{Males}}
+
+The highest earning male group appears in the 43-54 age range.
+Being married by age 25 seems to be a strong indicatory of future high salaries.
+This suggests that marriage and middle age are strong correlates of higher income for men.
+Being divorced or widowed seems to impair men's ability to earn a high salary down substantially.
+
+\underline{\textbf{Females}}
+
+For females, being married to a civilian spouse (Married-civ-spouse) is also a strong predictor of high income.
+The highest income proportion is in the 26-50 range, peaking at around 54\%.
+The divorced, widowed, and separated categories show especially weak salary trends.
+Married-spouse-absent and never-married have somewhat of a bump compared to these groups (15\% versus 3-9\%).
+
+However, compared to males, even married women earning a high salary is less common.
+
+
+\underline{\textbf{Both}}
+
+Males and Females who are married (Married-civ-spouse) show the highest proportion of high earners.
+
+
+Males in the 33-42 age range who are Married-AF-spouse and Females who are 21-25 and Married-AF-spouse
+show an extremely high proportion (~1.0) of earners above 50K. However, this may be due to low sample size rather than a strong trend. 
+
+\textbf{User Story 2:} A group of UVW Foreign relations researchers would like us to compare income variations among individuals based on their native country and work class.
+
+\textbf{Variable Analysis:} When analyzing our dataset, we found that the number of people surveyed with `native-country' as United-States vastly overwhelms the rest of the data. 
+Therefore, we did a probability analysis to see those earning 50K or more as a percentage of each country's population. The number of countries is also very high and
+the tail of the dataset becomes very narrow, meaning that we don't have a ton of samples to look at from less common countries. 
+We took the U.S. and the top 5 most common countries in the dataset outside of the U.S. and combined them into one graph. 
+Since this is proportional to earning salary, we removed the `without-pay' and `never-worked' columns to reduce visual clutter.
+Then, our hue became `workclass' to meet the requirements of the user story.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.05\linewidth]{country-workclass.png}  % Reduce width slightly
+    \caption{Male and Female Salary by Marital Status vs Age}
+    \label{fig:mf_marital_agebins}
+\end{figure}
+
+\textbf{Visual Analysis:} 
+
+\medskip
+
+The probability of earning more than $50K$ varies significantly across work classes and countries. The 50\% threshold line (red dashed line) serves as a key benchmark to determine which groups are more likely to be high earners.
+Self-employed incorporated (self-emp-inc) consistently ranks high, often surpassing the 50\% threshold across multiple countries.
+Government jobs (federal-gov, state-gov, and local-gov) display moderate earnings probabilities, often hovering around 40-60\%.
+Private-sector employees (private) show variability, with some countries having significantly higher probabilities than others.
+Self-employed but not incorporated (self-emp-not-inc) has a wider spread, showing both strong and weak earning probabilities depending on the country.
+
+\medskip
+
+\textbf{Country-Specific Insights}
+
+\medskip
+
+\underline{United States:}
+\par A high proportion of self-emp-inc individuals surpass the 50\% threshold, making it one of the strongest predictors of high earnings.
+Government jobs (particularly federal-gov) also perform well, but local and state government roles show a more balanced distribution below the 50\% mark.
+Private-sector workers are more evenly split, with some hovering around 50\% and others falling below.
+
+\underline{Canada, Germany:}
+\par Canada and Germany have similar trends in which self-emp-inc and federal-gov workers are among the highest earners.
+Local and state government jobs are more stable, but fewer exceed 50\%.
+Private workers fall behind self-employed incorporated individuals, but they still maintain reasonable earning probabilities.
+
+\underline{Mexico, Puerto Rico:}
+\par Mexico exhibits the lowest earning probabilities overall, with many work classes failing to cross the 50\% threshold.
+Puerto Rico has a notable self-emp-inc category that surpasses 50\%, while government positions and private jobs show a more even split.
+
+\underline{Philippines:}
+\par The strongest self-employment signals come from the Philippines, where self-employed incorporated (self-emp-inc) individuals have the highest probability of earning >50K across all countries in this dataset.
+Federal and state government jobs perform well, reaching around 50\%.
+Private-sector workers show more variance, with many remaining below the 50\% mark.
+
+\medskip
+
+\textbf{Key Observations}
+
+Self-employed incorporated (self-emp-inc) is the strongest predictor of high earnings across almost all countries.
+Federal government jobs are generally stable, often sitting around the 50\% threshold.
+State and local government jobs have greater variation, often falling below 50\% in certain countries.
+Private-sector employees display country-dependent variation, with some earning probabilities exceeding 50\% while others remain lower.
+Mexico and Puerto Rico have the lowest high-earning probabilities overall, with Mexico showing the weakest upward trend.
+
+\medskip
 
 \subsection{User Story \#2}
 \begin{itemize}
     \item \textbf{Role:} Workforce development strategist
-    \item \textbf{Goal:} To examine variations in income levels across different work classes and education levels.
+    \item \textbf{Goal:} UVW Foreign relations researcher
+    \item \textbf{Goal:} To compare income variations among individuals based on their native country and work class.
 \end{itemize}
 
 \subsection{User Story \#3}
@@ -524,7 +306,7 @@ To structure our approach further, we defined the following additional user stor
 \begin{enumerate}
     \item Latex set up for drafting submissions in VS Code for Mac by installing Mactex
     \item Started a Jupyter notebook server and began coding/using markdown to explain each data analysis step
-    \item Installed and configured necessary Python libraries, including: 
+    \item Installed and configured necessa  ry Python libraries, including: 
     \texttt{pandas}, \texttt{seaborn}, \texttt{matplotlib}, and 
     \texttt{scikit-learn}.
     \item Set up Git version control to track code changes and manage different analysis iterations.
