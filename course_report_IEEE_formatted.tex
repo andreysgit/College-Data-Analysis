@@ -275,42 +275,109 @@ Mexico and Puerto Rico have the lowest high-earning probabilities overall, with 
 
 \medskip
 
-\subsection{User Story \#2}
-\begin{itemize}
-    \item \textbf{Role:} Workforce development strategist
-    \item \textbf{Goal:} UVW Foreign relations researcher
-    \item \textbf{Goal:} To compare income variations among individuals based on their native country and work class.
-\end{itemize}
+\textbf{User Story 3:} Workforce development strategist is asking us to to 
+compare income variations among individuals based on their sex and hours worked
 
-\subsection{User Story \#3}
-\begin{itemize}
-    \item \textbf{Role:} Director of the UVW marketing team
-    \item \textbf{Goal:} To identify the strongest predictors of high-income individuals.
-\end{itemize}
+\textbf{Variable Analysis:} We created a box plot for this analysis to compare 
+income variations among individuals based on their sex and hours worked per week.
+This visualization was chosen because it effectively displays distribution,
+median work hours, interquartile range (IQR), and outliers, allowing us
+to simply observe differences between less than 50K and greater than 50K earners. The x-axis
+represents hours worked per week, while the y-axis categorizes individuals by income group
+in two region,with hue distinguishing between males and females.
+The design process involved filtering relevant data and selecting a meaningful
+color palette (blue for males and pink for females), and adjusting figure size
+and median line thickness to enhance readability.
 
-\subsection{User Story \#4}
-\begin{itemize}
-    \item \textbf{Role:} UVW Policy analyst
-    \item \textbf{Goal:} To assess whether marital status plays a significant role in salary levels across different age groups.
-\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{gender_hours.png}  % Reduce width slightly
+    \caption{Final histogram for Income vs Education}
+    \label{fig:final_income_vs_education}
+\end{figure}
 
-\subsection{User Story \#5}
-\begin{itemize}
-    \item \textbf{Role:} UVW Foreign relations researcher
-    \item \textbf{Goal:} To compare income variations among individuals based on their native country and work class.
-\end{itemize}
+\textbf{Visual Analysis:} 
+The plot reveals that higher-income individuals generally work more hours, 
+but males tend to have a wider spread in work hours compared to females, 
+especially in the >50K group. Additionally, there are more outliers among high-earning men,
+indicating cases of extreme work hours (60+ per week). 
+In contrast, lower-income individuals exhibit a more compact work-hour distribution.
 
+The result is a clear comparison of how work hours and income interact 
+across genders, providing insights into employment trends for workforce development strategists.
+
+\textbf{User Story 4:} Capital gains vs Occupation vs Salary
+\textbf{Variable Analysis:} 
+We created a histogram to analyze the distribution of capital-gain across
+individuals earning <=50K and >50K. This visualization was chosen because
+capital gains are highly skewed, with most individuals reporting zero or
+small values, while a few report very high values. To improve interpretability,
+we filtered the data to exclude individuals with zero capital-gain and
+those with gains exceeding \$45,000, which may be extreme outliers.
+The histogram uses hue to differentiate between salary groups, allowing us to compare distributions directly.
+The spikes at specific capital-gain values (e.g., 10,000, 7,298, and 3,103) suggest that some
+individuals report standard rounded amounts rather than varied capital gains,
+possibly due to tax reporting practices or employer-based stock gains.
+The plot also reveals that high capital gains are disproportionately associated
+with the >50K income group, whereas <=50K earners rarely report significant
+capital gains. The design process involved data filtering, selecting an
+appropriate bin range, and adjusting the color palette (blue for >50K, orange for <=50K)
+to enhance clarity. This visualization provides insights into how capital
+gains serve as a strong predictor of high-income individuals and may
+reflect investment-based earnings rather than traditional wages.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{capital-gain.png}  % Reduce width slightly
+    \caption{Final histogram for Income vs Education}
+    \label{fig:final_income_vs_education}
+\end{figure}
+
+\textbf{Visual Analysis:} 
+
+
+\textbf{User Story 5:} A foreign relations researcher is interested in
+understanding how capital gains vary based on relationship status
+and whether this impacts income classification (<=50K vs. >50K).
+By analyzing this interaction, we aim to identify potential patterns
+in wealth accumulation and financial benefits associated with different
+relationship categories.
+\textbf{Variable Analysis:} 
+
+For this analysis, we used a point plot to examine the relationship between
+capital gain, relationship type, and salary category. The x-axis represents
+different relationship categories, while the y-axis displays capital gain.
+The hue differentiates between individuals earning <=50K and those earning
+>50K, allowing for a direct comparison. Capital gain is an important
+financial metric as it reflects non-salary earnings such as stock sales,
+dividends, or real estate profits. This visualization helps us determine
+whether certain relationship groups tend to accumulate more capital gains
+and how that correlates with their overall income classification.
+
+The design process for this visualization involved choosing a point plot
+because it effectively displays central tendencies and variability for
+a continuous variable (capital gain) across multiple categorical groups
+(relationship status). The color scheme (blue for <=50K, orange for >50K)
+enhances clarity, and the error bars help us assess the spread and
+reliability of the data in each category.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{capital-gain-relationship.png}  % Reduce width slightly
+    \caption{Final histogram for Income vs Education}
+    \label{fig:final_income_vs_education}
+\end{figure}
+
+
+\textbf{Visual Analysis:} 
+
+Individuals classified as “Husband” have the highest median capital gains among >50K earners, significantly outpacing all other groups. This suggests that married men (likely filing jointly) may have more access to investment income.
+“Wife” also shows notable capital gains, but at lower levels compared to “Husband,” possibly due to gender-based earning disparities.
+“Own-child,” “Unmarried,” and “Other-relative” categories show high variability in capital gain distribution but tend to have a lower median capital gain overall. This may indicate that these groups have fewer investment-based earnings, relying more on salary income.
+For individuals earning <=50K, capital gains remain near zero across all relationship groups, confirming that significant capital gains are predominantly associated with high-income individuals.
+The large error bars for some categories (e.g., “Own-child”) suggest high variability and potentially small sample sizes in those groups.
+
+Overall, this visualization demonstrates that capital gains are strongly associated with high-income earners, particularly among married individuals (husbands and wives), while lower-income groups tend to report negligible capital gains.
 
 \section{Appendix}
-\subsection{Setup}
-\begin{enumerate}
-    \item Latex set up for drafting submissions in VS Code for Mac by installing Mactex
-    \item Started a Jupyter notebook server and began coding/using markdown to explain each data analysis step
-    \item Installed and configured necessa  ry Python libraries, including: 
-    \texttt{pandas}, \texttt{seaborn}, \texttt{matplotlib}, and 
-    \texttt{scikit-learn}.
-    \item Set up Git version control to track code changes and manage different analysis iterations.
-    \item Started a Jupyter notebook server and began coding and markdown to explain each data analysis step
-    \item Documented key findings and insights in Jupyter notebooks for reference in the final report.
-\end{enumerate}
 \end{document}
