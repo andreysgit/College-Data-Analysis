@@ -2,6 +2,12 @@
 *Completed February 2025*
 
 ---
+# TLDR
+
+Look through course_project.ipynb to get an idea of what this is about
+
+---
+
 
 ## Project Overview
 
